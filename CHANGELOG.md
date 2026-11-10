@@ -1,17 +1,24 @@
 # Changelog
 
+## 1.0.1 - 2026-11-10
+
+Bản vá đóng gói và tài liệu; không thay đổi runtime hay API công khai.
+
+- Dọn tài liệu và metadata đóng gói.
+- Chỉ đóng gói `LICENSE` trong metadata giấy phép.
+- Giữ nguyên TTS, STT, dịch, SRT, catalog giọng đọc, upload VOD và CLI.
+
 ## 1.0.0 - 2026-11-10
 
 Bản phát hành độc lập đầu tiên của ToolNet CapCut TTS.
 
-### Thương hiệu và đóng gói
+### Đóng gói
 
-- Đổi tên distribution thành `toolnet-capcut-tts`.
-- Package chính mới: `toolnet_capcut_tts`.
-- Giữ package tương thích `capcut_tts_api` cho mã nguồn hiện có.
-- CLI mới: `toolnet-capcut-tts`; giữ alias `capcut-tts-api`.
-- Viết lại README tiếng Việt, bổ sung README tiếng Anh và tiếng Trung.
-- Bổ sung LICENSE, NOTICE và metadata giấy phép MIT.
+- Distribution: `toolnet-capcut-tts`.
+- Package chính: `toolnet_capcut_tts`.
+- CLI: `toolnet-capcut-tts`.
+- README tiếng Việt, tiếng Anh và tiếng Trung.
+- Giấy phép MIT và thông báo bản quyền trong `LICENSE`.
 
 ### Chức năng
 

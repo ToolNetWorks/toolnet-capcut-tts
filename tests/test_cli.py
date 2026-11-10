@@ -2,6 +2,7 @@ import json
 
 import pytest
 
+from toolnet_capcut_tts import __version__
 from toolnet_capcut_tts.cli import main
 
 
@@ -16,7 +17,7 @@ def test_help_and_version(capsys):
     with pytest.raises(SystemExit) as exc_info:
         main(["--version"])
     assert exc_info.value.code == 0
-    assert "1.0.0" in capsys.readouterr().out
+    assert __version__ in capsys.readouterr().out
 
 
 def test_list_voices(capsys):

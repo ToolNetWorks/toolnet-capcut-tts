@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_public_metadata():
     assert toolnet_capcut_tts.__title__ == "ToolNet CapCut TTS"
-    assert toolnet_capcut_tts.__version__ == "1.0.0"
+    assert toolnet_capcut_tts.__version__ == "1.0.1"
     assert capcut_tts_api.__version__ == toolnet_capcut_tts.__version__
 
 
@@ -33,16 +33,12 @@ def test_legacy_catalog_data_is_identical():
         ).read_bytes()
 
 
-def test_license_and_notice_preserved():
+def test_license_preserved():
     license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
-    notice_text = (ROOT / "NOTICE").read_text(encoding="utf-8")
 
     assert "MIT License" in license_text
     assert "CapCut API Contributors" in license_text
     assert "ToolNetWorks" in license_text
-    assert "Original work" in notice_text
-    assert "CapCut API Contributors" in notice_text
-    assert "LICENSE" in notice_text
 
 
 def test_no_promotional_source_links_in_text_files():
@@ -72,11 +68,11 @@ def test_no_promotional_source_links_in_text_files():
 def test_pyproject_uses_toolnet_distribution():
     text = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
     assert 'name = "toolnet-capcut-tts"' in text
-    assert 'version = "1.0.0"' in text
+    assert 'version = "1.0.1"' in text
     assert 'toolnet-capcut-tts = "toolnet_capcut_tts.cli:main"' in text
     assert 'capcut-tts-api = "capcut_tts_api.cli:main"' in text
     assert 'license = "MIT"' in text
-    assert 'license-files = ["LICENSE", "NOTICE"]' in text
+    assert 'license-files = ["LICENSE"]' in text
 
 
 def test_release_workflow_uses_trusted_publishing():
@@ -92,4 +88,5 @@ def test_release_workflow_uses_trusted_publishing():
 def test_changelog_and_pypi_version_agree():
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     assert "## 1.0.0" in changelog
-    assert toolnet_capcut_tts.__version__ == "1.0.0"
+    assert "## 1.0.1" in changelog
+    assert toolnet_capcut_tts.__version__ == "1.0.1"

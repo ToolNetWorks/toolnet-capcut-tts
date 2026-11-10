@@ -54,12 +54,12 @@ permissions:
 3. Commit, tạo tag annotated và push:
 
    ```bash
-   git tag -a v1.0.0 -m "ToolNet CapCut TTS 1.0.0"
+   git tag -a v1.0.1 -m "ToolNet CapCut TTS 1.0.1"
    git push origin main
-   git push origin v1.0.0
+   git push origin v1.0.1
    ```
 
-4. Tạo GitHub Release từ tag `v1.0.0`. Khi Release được publish, workflow
+4. Tạo GitHub Release từ tag `v1.0.1`. Khi Release được publish, workflow
    `Publish to PyPI` sẽ build lại, chạy test và upload lên PyPI bằng OIDC.
 5. Xác nhận bản phát hành tại:
 

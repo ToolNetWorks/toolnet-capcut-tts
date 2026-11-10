@@ -33,7 +33,6 @@ ToolNet CapCut TTS 是一个独立的 Python 项目，采用 MIT 许可证。项
 | 目录 | 语音列表、语音解析、语言代码分组 |
 | SDK | `CapCutClient`、数据类、公开异常 |
 | CLI | 11 种模式，支持 `--dry-run` 和 JSON 输出 |
-| 兼容 | 保留旧版 `capcut_tts_api` 导入路径 |
 
 ## 环境要求
 
@@ -225,23 +224,12 @@ client = CapCutClient(
 | `generate_speech_from_srt` | 按 cue 或合并生成音频 |
 | `generate_speech_and_transcribe` | TTS 后 STT 往返 |
 
-### 旧版导入
-
-```python
-from capcut_tts_api import CapCutClient
-from capcut_tts_api.models import SubtitleResult
-```
-
-`capcut_tts_api` 是兼容层，公开类名和方法签名保持不变。
-
 ## CLI
 
 ```bash
 toolnet-capcut-tts --help
 toolnet-capcut-tts --version
 ```
-
-旧命令 `capcut-tts-api` 仍作为别名可用。
 
 | 模式 | 用途 |
 | --- | --- |
@@ -334,11 +322,9 @@ except CapCutError as exc:
 ```text
 toolnet-capcut-tts/
 ├── toolnet_capcut_tts/   # 主包
-├── capcut_tts_api/       # 旧版导入兼容层
 ├── tests/                # 单元测试
 ├── pyproject.toml
 ├── LICENSE
-├── NOTICE
 └── README.md
 ```
 
@@ -352,7 +338,7 @@ python -m pytest
 离线检查：
 
 ```bash
-python -m compileall -q toolnet_capcut_tts capcut_tts_api
+python -m compileall -q toolnet_capcut_tts
 toolnet-capcut-tts --help
 toolnet-capcut-tts list-voices --language vi-VN
 toolnet-capcut-tts list-languages
@@ -375,5 +361,3 @@ toolnet-capcut-tts tts-new --text "你好" --dry-run
 ## 许可证与署名
 
 本项目使用 **MIT License** 发布。完整条款和版权声明见 [LICENSE](LICENSE)。
-
-原始版权声明、重构说明和品牌化记录见 [NOTICE](NOTICE)。

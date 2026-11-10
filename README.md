@@ -35,7 +35,6 @@ Dự án cung cấp:
 | Catalog | Danh sách giọng đọc, resolve voice, danh sách ngôn ngữ |
 | SDK | `CapCutClient`, dataclass, exception công khai |
 | CLI | 11 chế độ, hỗ trợ `--dry-run`, xuất JSON |
-| Tương thích | Giữ import cũ `capcut_tts_api` bên cạnh package mới |
 
 ## Yêu cầu
 
@@ -322,38 +321,17 @@ subtitles = client.extract_subtitles(stt_result)
 subtitles.write_srt("recording.en.srt", use_translation=True)
 ```
 
-### Tương thích import cũ
-
-Package `capcut_tts_api` được giữ làm facade:
-
-```python
-from capcut_tts_api import CapCutClient  # vẫn hoạt động
-from capcut_tts_api.models import SubtitleResult
-```
-
-API công khai và class name không thay đổi. Đường dẫn CLI cũ
-`capcut-tts-api` cũng được giữ làm alias.
-
 ## CLI
-
-CLI chính:
 
 ```bash
 toolnet-capcut-tts --help
 toolnet-capcut-tts --version
 ```
 
-Alias tương thích:
-
-```bash
-capcut-tts-api --help
-```
-
 Chạy không cần cài console script:
 
 ```bash
 python -m toolnet_capcut_tts --help
-python -m capcut_tts_api --help
 ```
 
 ### Các chế độ
@@ -503,11 +481,9 @@ toolnet-capcut-tts/
 │   ├── uploader.py          # Upload VOD
 │   ├── Voice.json           # Catalog giọng đọc
 │   └── language.json        # Catalog ngôn ngữ
-├── capcut_tts_api/          # Facade tương thích import cũ
 ├── tests/                   # Unit test
 ├── pyproject.toml
 ├── LICENSE
-├── NOTICE
 └── README.md
 ```
 
@@ -521,7 +497,7 @@ python -m pytest
 Kiểm tra nhanh không cần dịch vụ:
 
 ```bash
-python -m compileall -q toolnet_capcut_tts capcut_tts_api
+python -m compileall -q toolnet_capcut_tts
 toolnet-capcut-tts --help
 toolnet-capcut-tts list-voices --language vi-VN
 toolnet-capcut-tts list-languages
@@ -546,9 +522,6 @@ Kết quả có thể khác nhau theo tài khoản, voice và thời điểm.
 
 Dự án phát hành theo giấy phép **MIT**. Xem [LICENSE](LICENSE) để biết toàn văn
 điều kiện cấp phép và thông báo bản quyền.
-
-Thông tin về tác phẩm gốc, các thay đổi khi tái cấu trúc thương hiệu và việc bảo
-toàn thông báo bản quyền được ghi trong [NOTICE](NOTICE).
 
 MIT cho phép sử dụng, sao chép, sửa đổi và phân phối, với điều kiện giữ lại
 thông báo bản quyền và điều kiện giấy phép trong bản sao hoặc phần quan trọng

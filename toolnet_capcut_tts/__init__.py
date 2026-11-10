@@ -27,7 +27,7 @@ from toolnet_capcut_tts.models import (
 from toolnet_capcut_tts.action import TTSConfigurationError, build_tts_action, parse_provider_params
 
 __title__ = "ToolNet CapCut TTS"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 __all__ = [
     "CapCutClient",

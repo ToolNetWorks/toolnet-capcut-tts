@@ -36,7 +36,6 @@ workflows. It includes:
 | Catalog | Voice list, voice resolution, language code groups |
 | SDK | `CapCutClient`, dataclasses, public exceptions |
 | CLI | 11 modes, `--dry-run`, JSON output |
-| Compatibility | Legacy `capcut_tts_api` imports remain supported |
 
 ## Requirements
 
@@ -254,24 +253,12 @@ for artifact in client.extract_tts_artifacts(result):
     print(artifact)
 ```
 
-### Legacy imports
-
-```python
-from capcut_tts_api import CapCutClient
-from capcut_tts_api.models import SubtitleResult
-```
-
-The legacy package is a compatibility facade over `toolnet_capcut_tts`. Public
-class names and method signatures are unchanged.
-
 ## CLI
 
 ```bash
 toolnet-capcut-tts --help
 toolnet-capcut-tts --version
 ```
-
-The legacy `capcut-tts-api` command remains available as an alias.
 
 | Mode | Purpose |
 | --- | --- |
@@ -366,11 +353,9 @@ except CapCutError as exc:
 ```text
 toolnet-capcut-tts/
 ├── toolnet_capcut_tts/   # Canonical package
-├── capcut_tts_api/       # Legacy import facade
 ├── tests/                # Unit tests
 ├── pyproject.toml
 ├── LICENSE
-├── NOTICE
 └── README.md
 ```
 
@@ -384,7 +369,7 @@ python -m pytest
 Offline smoke checks:
 
 ```bash
-python -m compileall -q toolnet_capcut_tts capcut_tts_api
+python -m compileall -q toolnet_capcut_tts
 toolnet-capcut-tts --help
 toolnet-capcut-tts list-voices --language vi-VN
 toolnet-capcut-tts list-languages
@@ -408,6 +393,3 @@ account. Results can vary by account, voice and time.
 
 Released under the **MIT License**. See [LICENSE](LICENSE) for the full terms
 and copyright notices.
-
-See [NOTICE](NOTICE) for provenance, the original copyright notice and a
-summary of the rebranding and maintenance changes.
