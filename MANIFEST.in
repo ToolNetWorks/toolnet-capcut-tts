@@ -1,0 +1,8 @@
+include README.md
+include README.en.md
+include README.zh-CN.md
+include CHANGELOG.md
+include PUBLISHING.md
+include LICENSE
+include NOTICE
+recursive-include tests *.py

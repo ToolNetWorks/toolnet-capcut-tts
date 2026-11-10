@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toolnet-capcut-tts"
+version = "1.0.0"
+description = "ToolNet CapCut TTS - Python SDK and CLI for CapCut text-to-speech, speech-to-text, translation and SRT workflows"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+    {name = "ToolNetWorks"}
+]
+maintainers = [
+    {name = "ToolNetWorks"}
+]
+keywords = [
+    "toolnet",
+    "capcut",
+    "tts",
+    "stt",
+    "text-to-speech",
+    "speech-to-text",
+    "translation",
+    "srt",
+    "vod",
+    "api",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+toolnet-capcut-tts = "toolnet_capcut_tts.cli:main"
+capcut-tts-api = "capcut_tts_api.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ToolNetWorks/toolnet-capcut-tts"
+Repository = "https://github.com/ToolNetWorks/toolnet-capcut-tts"
+Issues = "https://github.com/ToolNetWorks/toolnet-capcut-tts/issues"
+Changelog = "https://github.com/ToolNetWorks/toolnet-capcut-tts/blob/main/CHANGELOG.md"
+PyPI = "https://pypi.org/project/toolnet-capcut-tts/"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["toolnet_capcut_tts*", "capcut_tts_api*"]
+
+[tool.setuptools.package-data]
+toolnet_capcut_tts = ["Voice.json", "language.json", "py.typed"]
+capcut_tts_api = ["Voice.json", "language.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

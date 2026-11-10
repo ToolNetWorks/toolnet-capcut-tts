@@ -1,0 +1,26 @@
+ToolNet CapCut TTS
+==================
+
+This software is an independent, rebranded distribution derived from the
+"capcut-tts-api" Python package.
+
+Original work
+-------------
+Project: capcut-tts-api
+Copyright (c) 2026 CapCut API Contributors
+License declared by the original project: MIT
+The original repository did not include a standalone LICENSE file. The MIT
+terms declared in its package metadata are reproduced in LICENSE together
+with the original copyright notice.
+
+Modifications
+-------------
+- Repackaged and rebranded as ToolNet CapCut TTS.
+- Canonical import package: toolnet_capcut_tts.
+- capcut_tts_api is retained as a compatibility facade for existing imports.
+- Documentation, CLI entry points, tests and package metadata were updated.
+- Bug fixes are limited to task-status handling, base URL propagation, voice
+  resolution and language-catalog helpers. The core TTS/STT algorithms are
+  unchanged.
+
+The MIT license and the original copyright notice are preserved in LICENSE.
