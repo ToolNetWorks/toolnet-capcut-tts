@@ -8,8 +8,7 @@
 
 ## 简介
 
-ToolNet CapCut TTS 是一个独立的 Python 项目，基于 MIT 许可的 CapCut 语音
-SDK 重构和品牌化。项目提供：
+ToolNet CapCut TTS 是一个独立的 Python 项目，采用 MIT 许可证。项目提供：
 
 - TTS 任务创建、轮询和音频下载；
 - VOD 媒体上传和 STT 识别；
